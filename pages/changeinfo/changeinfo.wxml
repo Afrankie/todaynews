@@ -1,0 +1,63 @@
+<!--pages/changeinfo/changeinfo.wxml-->
+<view >
+  <view class="one box" bindtap="addFaceImage">
+    <text>头像</text>
+    <view class="rightbox">
+      <image class="imagebox" src="{{faceimage}}"></image>
+      <image class="righticon" src="/images/right.png"></image>
+    </view>
+  </view>
+
+  <view class="splitrow"></view>
+  <view class="one box" bindtap="addbgimage">
+    <text>个人主页背景</text>
+    <view class="rightbox">
+      <image class="imagebox" src="{{bgimage}}"></image>
+      <image class="righticon" src="/images/right.png"></image>
+    </view>
+  </view>
+
+  <view class="splitrow"></view>
+  <view class="one box" bindtap="inputname">
+    <text>昵称</text>
+    <view class="rightbox">
+      <text>{{username}}</text>
+      <image class="righticon" src="/images/right.png"></image>
+    </view>
+  </view>
+
+  <view class="splitrow"></view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{gender}}">
+    <view class="one box">
+        <text>性别</text>
+        <view class="rightbox">
+          <text>{{gender[index]}}</text>
+          <image class="righticon" src="/images/right.png"></image>
+        </view>
+    </view>
+  </picker>
+
+  <view class="splitrowbold"></view>
+
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="one box">
+        <text>地区</text>
+        <view class="rightbox">
+          <text>{{region[0]}} {{region[1]}}</text>
+          <image class="righticon" src="/images/right.png"></image>
+        </view>
+    </view>
+  </picker>
+
+  <view class="splitrowbold"></view>
+  <view class="areabox">
+    <text style="margin-bottom:15rpx;">介绍</text>
+    <view class="splitrow"></view>
+    <textarea class="area" bindinput="input" placeholder="个人介绍..." value="{{inputValue}}"></textarea>
+  </view>
+
+
+  <modal title="昵称" confirm-text="确认" cancel-text="取消" hidden="{{modalhide}}" bindconfirm="modalConfirm" bindcancel="modalCancel">  
+        <input class="nameinput" bindinput="saveUserName" placeholder="昵称..." value="{{username}}" />
+     </modal>
+</view>

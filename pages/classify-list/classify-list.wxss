@@ -1,0 +1,63 @@
+/* pages/classify-list/classify-list.wxss */
+.name{
+  width: 100%;
+  color: #e16631de;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.card {
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 5px 2px 2px #e1663198;
+    margin: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.image {
+    width: 30%;
+    height: 200rpx;
+    border-radius: 10px;
+    padding-top: 5rpx;
+    background-color: #eeeeee;
+}
+.cardText{
+  width: 65%;
+  height: 200rpx;
+  margin-left: 3%;
+}
+.title{
+  margin: 5rpx;
+  color:  #615e5e;
+}
+.content{
+  padding-bottom: 10rpx;
+}
+.content text{
+  color:  #615e5e;
+  font-size: 0.6rem;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.png{
+  position:absolute;
+  right:0px;
+  bottom:0px;
+}
+.png image{
+  width: 50rpx;
+  height: 50rpx;
+  float: right;
+}
+.noData{
+  text-align: center;
+  margin: 30rpx;
+  color: #c2bebe
+}

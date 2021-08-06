@@ -1,0 +1,265 @@
+/* pages/articledetail/articledetail.wxss */
+.selfcontainer{
+  margin: 0;
+  padding: 0;
+}
+.faceImage{
+  width:100%;
+  height:420rpx;
+  /* border: 1px solid red; */
+}
+.faceImage image{
+  width:100%;
+  height:100%;
+}
+.result-container{
+  padding: 10px;
+}
+.one{
+  margin-top: 3px;
+  display: flex;
+  flex-direction: row;
+  padding: 3px;
+  /* border: 1px solid black; */
+}
+.userimage{
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+  /* border: 1px solid red; */
+}
+.username{
+  margin-left: 8px;
+  color: rgb(159, 159, 241);
+  font-size: 15px;
+}
+.time{
+  margin-left: 8px;
+  color: grey;
+  font-size: 12px;
+}
+.ql-container{
+  width: 100%;
+  height: fit-content;
+  min-height: 50rpx;
+}
+.location{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: rgb(202, 202, 202,0.5);
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+}
+.lname{
+  font-weight: bolder;
+}
+.laddress{
+  font-size: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+	white-space: nowrap;
+  font-family: PingFangSC-Regular;
+}
+.views{
+  font-size: 13px;
+  color: grey;
+  /* margin-bottom: 45px; */
+}
+.bottom{
+  border-top: 1px solid rgba(128, 128, 128, 0.4);
+  background: #fff;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  font-size: 12px;
+  /* height: 40px; */
+  min-height: 40px;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  /* border: 1px solid red; */
+  
+}
+.bar{
+  justify-content: space-between;
+}
+.bnum{  
+  display:inline-block;
+  position:relative; 
+  bottom:17px;
+}
+.bottomone{
+  padding: 3px;
+  display: flex;
+  flex-direction: row;
+}
+.bottomimg{
+  width: 25px;
+  height: 25px;
+  
+}
+.title{
+  font-weight: bolder;
+}
+
+.bottombox{
+  padding-left: 20rpx;
+  padding-right: 10rpx;
+  align-items: center;
+  width: 100%;
+}
+
+.inputbox{
+  float: left;
+  padding-left: 10rpx;
+  font-size: 28rpx;
+  /* border: 1px solid red; */
+  margin-right: 20rpx;
+}
+
+.btn{
+  
+  font-weight: 18rpx;
+  padding: 0;
+  margin: 0;
+  font-size: 28rpx;
+  float: left;
+  background: white;
+  /* border: 1px solid red; */
+}
+.hidden{
+  display: none;
+}
+
+.commentbar{
+  background: rgba(128, 128, 128, 0.4);
+  width: 100%;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.commentbar text{
+  padding-top: 5rpx;
+  margin-left: 20rpx;
+  padding-bottom: 5rpx;
+}
+.notice{
+  width: 100%;
+  background: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.show{
+  display: flex;
+}
+
+.one{
+  display: flex;
+  flex-direction: row;
+}
+
+.headbox{
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+.subheadbox{
+  height: 100%;
+  /* border: 1px solid red; */
+  margin-left: 15rpx;
+  
+  align-items: center;
+}
+.commentbox{
+  /* border: 1px solid red; */
+  padding: 15rpx;
+  
+}
+.forshowbottom{
+  margin-bottom: 45px;
+}
+.cuserimage{
+  width: 65rpx;
+  height: 65rpx;
+  /* border: 1px solid red; */
+  border-radius: 100%; 
+}
+
+.cusername{
+  
+  padding: 0;
+  margin: 0;
+  font-size: 23rpx;
+  /* border: 1px solid black; */
+}
+.authoricon{
+  /* border: 1px solid red; */
+  font-size: 16rpx;
+  background: rgba(255, 0, 0, 0.3);
+  color: red;
+  padding: 3rpx;
+  margin-left: 8rpx;
+  border-radius: 5rpx;
+}
+.ctime{
+  /* border: 1px solid black; */
+  font-size: 15rpx;
+}
+.rightmove{
+  /* border: 1px solid black; */
+  margin-left: 80rpx;
+}
+.content{
+  font-size: 26rpx;
+}
+.likeicon{
+  /* margin-left: auto; */
+  width: 35rpx;
+  height: 35rpx;
+  /* border: 1px solid red; */
+}
+.authorreply{
+  border: 1px solid rgba(128, 128, 128, 1);
+  font-size: 16rpx;
+  border-radius: 6rpx;
+  padding: 3rpx;
+  color: grey;
+  width: fit-content;
+}
+.howmanyreply{
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  color: blue;
+  opacity: 0.9;
+  font-size: 22rpx;
+}
+.subsubheadbox{
+  display: flex;
+  /* border: 1px solid black; */
+  align-items: center;
+}
+.ctnum{
+  /* border: 1px solid black; */
+  margin-right: 8rpx;
+  color: grey;
+  font-size: 25rpx;
+}
+.likeiconnumbox{
+  /* border: 1px solid black; */
+  margin-left: auto;  
+  align-items: center;
+  display: flex;
+}
+.blacknum{
+  color: black;
+}
+
+
+
+

@@ -1,0 +1,19 @@
+<swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
+  <block wx:for="{{imgUrls}}" wx:for-index="index"  wx:key="item">
+     <navigator url="/pages/detail/detail?id={{item.id}}">
+    <swiper-item>
+      <image src='{{item.img}}' class='u-img-slide' mode='aspectFill'></image>
+    </swiper-item>
+    </navigator>
+  </block>
+</swiper>
+<view class="split-line"></view>
+<view class="recommend">
+  <view class="tuijian"><text>⭐每日推荐</text></view>
+  <view class="tuijianList " >
+      <navigator class="tuijianItem " wx:for="{{tuijianFood}}" wx:key="item" data-id="{{item.id}}" url="/pages/detail/detail?id={{item.id}}" hover-class="navigator-hover">
+          <image src="{{item.pic}}" mode="aspectFill"/>
+          <text>{{item.name}}</text>
+      </navigator>
+  </view>
+</view>

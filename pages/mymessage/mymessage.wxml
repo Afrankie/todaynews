@@ -1,0 +1,50 @@
+<!--pages/mymessage/mymessage.wxml-->
+
+<tab tabList="{{tabList}}" bind:clickTab="clickTab" tab-container="tab-container" tab="tab" tab-item="tab-item" item="item" active="active"/>
+
+<view class="result-content {{tabList[0].show ? 'show-content' : '' }}">
+  <text style="color:grey;font-size:25rpx;padding-left:10rpx;" class="hidden {{messagescomment.length==0?'show':''}}">还木有数据哦</text>
+  <view class="result" wx:for="{{messagescomment}}" wx:key="item">
+    <view class="one box">
+      <image class="userimage" src="{{item.image}}" data-uid="{{item.uid}}" catchtap="gopersonal"></image>
+      <view class="rightbox">
+        <view class="subrow">
+          <text class="username2">{{item.username}}</text>
+          <text class="time">{{item.time}}</text>
+        </view>
+        <view class="content2">
+          {{item.content}}
+        </view>
+        <view class="refercontent2">
+          {{item.refercontent}}
+        </view>
+      </view>
+    </view>
+    <view class="splitrow"></view>
+  </view>
+  
+</view>
+
+<view class="result-content {{tabList[1].show ? 'show-content' : '' }}">
+  <text style="color:grey;font-size:25rpx;padding-left:10rpx;" class="hidden {{messages.length==0?'show':''}}">还木有数据哦</text>
+  <view class="result" wx:for="{{messages}}" wx:key="item">
+    <view class="one box">
+      <image class="userimage" src="{{item.image}}" data-uid="{{item.uid}}" catchtap="gopersonal"></image>
+      <view class="rightbox">
+        <view class="subrow">
+          <text class="username">{{item.username}}</text>
+          <text class="operate">{{item.operate}}</text>
+          <text class="time">{{item.time}}</text>
+        </view>
+        <view class="content">
+          <view class="flexstyle">
+            <view class="hidden {{item.type=='tcomment'&&item.who!=''?'show':''}}">回复<text class="blueurltext" data-uid="{{item.whouid}}" bindtap="gopersonal">{{item.who}}</text></view>{{item.content}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="splitrow"></view>
+  </view>
+</view>
+
+

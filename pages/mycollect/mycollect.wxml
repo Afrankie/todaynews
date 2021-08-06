@@ -1,0 +1,37 @@
+<!--pages/mycollect/mycollect.wxml-->
+
+<tab tabList="{{tabList}}" bind:clickTab="clickTab" tab-container="tab-container" tab="tab" tab-item="tab-item" item="item" active="active"/>
+<view class="result-content {{tabList[0].show ? 'show-content' : '' }}">
+  <text style="color:grey;font-size:25rpx;padding-left:10rpx;" class="hidden {{collectFood.length==0?'show':''}}">还木有数据哦</text>
+  <block wx:for="{{collectFood}}" wx:key="item">
+    <navigator url="/pages/detail/detail?id={{item.id}}&hasCollect=true">
+    <view class="card" >
+            <image class="image" mode="aspectFill" src="{{item.pic}}"/>
+            <view class="cardText">
+              <view class="histitle">{{item.name}}</view>
+              <view class="content"><text decode="{{true}}">&nbsp;&nbsp;&nbsp;{{item.content}}</text></view>
+              <view class="png"><image src="/images/推荐.png"></image><image src="/images/收藏.png" bindtap="collect"></image></view>
+            </view>
+            
+    </view>
+    </navigator>
+  </block>
+</view>
+
+<view class="result-content {{tabList[1].show ? 'show-content' : '' }}">
+  <text style="color:grey;font-size:25rpx;padding-left:10rpx;" class="hidden {{articles.length==0?'show':''}}">还木有数据哦</text>
+  <view class="tuijianList " >
+            <navigator class="tuijianItem " wx:for="{{articles}}" wx:key="item" data-id="{{item.id}}" hover-class="navigator-hover">
+                <navigator url="/pages/articledetail/articledetail?postid={{item.id}}&index={{index}}&postuserid={{item.postuserid}}" >
+                  <image class="faceimage" src="{{item.faceimage}}" mode="aspectFill"/>
+                  <text class="title">{{item.title}}</text>
+                </navigator>
+                <view class="one">
+                  <image class="userimage" src="{{item.userimage}}" mode="aspectFill" bindtap="gotopersonal" data-postuserid="{{item.postuserid}}" ></image>
+                  <text>{{item.username}}</text>
+                  <image class="likeimage" src="{{item.isThumbs ? '/images/like_fill.png' : '/images/like.png' }}"  data-postid="{{item.id}}" data-index="{{index}}" data-postuserid="{{item.postuserid}}" bindtap="thumbsUp" mode="aspectFill"></image>
+                  <text class="num">{{item.thumbs}}</text>
+                </view>
+            </navigator>
+    </view>   
+</view>

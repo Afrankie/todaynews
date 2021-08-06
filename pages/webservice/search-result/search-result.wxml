@@ -1,0 +1,28 @@
+<!--pages/webservice/reverseGeocoder-result/reverseGeocoder-result.wxml-->
+<view class="search-container">
+  <view class="btn-container">
+		  <view class="btn" bindtap="verify">确认</view>
+	</view>
+  <view class="result-container">
+    <view class="result-content show-content">
+      <view class="map-content">
+        <map class="map" id="map" show-location markers="{{markers}}" include-points="{{includePoints}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}">
+        </map>
+      </view>
+      <view class="pois-contianer">
+        <scroll-view class="poi-list" wx:if="{{pois.length > 0}}">
+          <view class="list-item" wx:for="{{pois}}" wx:key="index" data-latitude='{{item.location.lat}}' data-longitude='{{item.location.lng}}' data-name='{{item.title}}' data-address='{{item.address}}' bindtap="clickitem">
+            <view class="item-title" >
+              <text>{{item.title}}</text>
+            </view>
+            <view class="item-info">
+              <text class="item-address">{{item.address}}</text>
+            </view>
+          </view>
+        </scroll-view>
+        <view class="noPois" wx:if="{{pois.length === 0}}">搜索无结果</view>
+      </view>
+    </view>
+    
+  </view>
+</view>

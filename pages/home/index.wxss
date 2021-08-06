@@ -1,0 +1,86 @@
+/**index.wxss**/
+.one{
+  display: flex;
+  flex-direction: row;
+}
+.container{
+  margin: 0;
+  padding: 15px;
+  padding-bottom: 5px;
+  width: 100%;
+  height: fit-content;
+}
+.headbox{
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.headbox text{
+  margin-left: 5px;
+  display:inline-block;
+  position:fixed; 
+  top:15px;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  /* margin: 20rpx; */
+  border-radius: 50%;
+  
+}
+.mystate{
+  
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: grey;
+  text-align: center;
+}
+.splitrow{
+  height: 1rpx;
+  width: 100%;
+  background: grey;
+  opacity: 0.3;
+}
+.splitrowbold{
+  height: 15rpx;
+  width: 100%;
+  background: grey;
+  opacity: 0.3
+}
+.splitcol{
+  height: 60rpx;
+  width: 1rpx;
+  opacity: 0.3;
+  border-right: 1px solid grey;
+}
+.num{
+  font-weight: bolder;
+  color: black;
+}
+
+.bottombox{
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1px solid rgba(128, 128, 128,0.2);
+}
+.littleicon{
+  width: 50rpx;
+  height: 50rpx; 
+}
+.bottombox text{
+  margin-left: 25rpx;
+  font-size: 30rpx;
+}
+.righticon{
+  width: 43rpx;
+  height: 43rpx; 
+  opacity: 0.6;
+  margin-left: auto;
+}
+

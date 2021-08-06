@@ -1,0 +1,79 @@
+<swiper indicator-dots="true" indicator-color="#F8F8FF" indicator-active-color="#A9A9A9" circular="true" autoplay="true" interval="5000" duration="500" class='swiper-wrapper'>
+  <view wx:for="{{pics}}">
+    <swiper-item>
+     <image src="{{item.url}}" class="slide-image"/>
+     
+			<view class='swiper-title' wx:if="{{item.description.length > 0}}">{{item.description}}</view>
+      <view wx:if="{{item.description.length == 0}}">{{item.description}}</view>
+    </swiper-item>
+  </view>
+</swiper>
+
+<view class="article">
+  <view class="title">{{title}}</view>
+  <view class="basic-info">
+    <text>{{author}}</text>
+    <text>{{relative_time}}</text>
+  </view>
+  <view class="content">
+  {{content}}
+  </view>
+</view>
+
+
+
+<view class="zhanwei"/>
+
+<view wx:for="{{comments}}" class="cm">
+  <view class="line1">
+    <image src="{{item.user_image}}" class="user_image"/>
+    <text class="user_name">{{item.user_name}}</text>
+    <text wx:if="{{item.like_count == 0}}" class="zan">赞</text>
+    <text wx:if="{{item.like_count > 0}}" class="zan">{{item.like_count}}</text>
+    <view class="zanpic-box">
+      <image wx:if="{{item.like >= 1}}" src="/images/like_fill.png" class="thumbs_up"/>
+      <image wx:if="{{item.like == 0}}" src="/images/like.png" class="thumbs_up"/>
+    </view>
+    
+  </view>
+  <view class="line2">{{item.content}}</view>
+  <view class="line3">
+    <text class="huifu"><block wx:if="{{item.count > 0}}">{{item.count}}</block>回复></text>
+    <text class="huifu-time">{{item.relative_time}}</text>
+  </view>
+
+</view>
+<view wx:if="{{comments.length == 0}}" class="nocm">还没有评论，快来抢沙发把~</view>
+
+<view class="zhanwei"/>
+
+<view class="caozuo" wx:if="{{show_xpl}}">
+  <view class="xpl-box" bindtap="clickComment">
+    <mp-icon icon="pencil" size="{{17}}" class="icon"></mp-icon>
+    <text>写评论...</text>
+  </view>
+  <view class="icon-box">
+    <mp-icon icon="comment" size="{{25}}" class="icon"></mp-icon>
+    <mp-badge wx:if="{{comment_count > 0}}" content="{{comment_count}}" class="badge"/>
+  </view>
+
+  <mp-icon wx:if="star == 0" icon="star" size="{{25}}" class="icon"></mp-icon>
+  <mp-icon wx:if="star == 1" icon="star" size="{{25}}" class="icon" type="field" color="orange"></mp-icon>
+
+  <view class="icon-box">
+    <mp-icon icon="like" size="{{25}}" class="icon"></mp-icon>
+    <mp-icon icon="like" size="{{25}}" class="icon" type="field" color="red"></mp-icon>
+    <mp-badge wx:if="{{like_count > 0}}" content="{{like_count}}" class="badge"/>
+  </view>
+
+  <mp-icon icon="share" size="{{25}}" class="icon"></mp-icon>
+</view>
+
+<!-- 输入框 -->
+<view wx:if="{{show_xpl == false}}" class="shuru-box">
+  <textarea class="shuru" name="ta" id="shuru" cols="30" rows="2" value="{{ta_content}}" placeholder="{{ph}}" bindblur="blur" focus="{{focus}}" bindinput="getTAValue" ></textarea>
+  <text bindtap="addComment">发布</text>
+</view>
+
+
+

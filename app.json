@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/news-detail/news-detail",
+    "pages/new-index/new-index",
+    "pages/home/index",
+    "pages/look/look",
+    "pages/logs/logs",
+    "pages/webservice/search-result/search-result",
+    "pages/webservice/search-form/search-form",
+    "pages/articledetail/articledetail",
+    "pages/personal/personal",
+    "pages/mycollect/mycollect",
+    "pages/people/people",
+    "pages/mymessage/mymessage",
+    "pages/allreply/allreply",
+    "pages/changeinfo/changeinfo",
+    "pages/authorize/authorize",
+    "pages/search/search"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#e16531",
+    "navigationBarTitleText": "今天头条",
+    "navigationBarTextStyle": "white",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#999",
+    "selectedColor": "#f9a115",
+    "list": [
+      {
+        "pagePath": "pages/new-index/new-index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_active.png"
+      },
+      {
+        "pagePath": "pages/news-detail/news-detail",
+        "text": "详情",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/search_active.png"
+      },
+      {
+        "pagePath": "pages/look/look",
+        "text": "发现",
+        "iconPath": "images/eye.png",
+        "selectedIconPath": "images/eye_active.png"
+      },
+      {
+        "pagePath": "pages/home/index",
+        "text": "我的",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine_active.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "useExtendedLib": {
+    "weui": true
+  }
+  
+}

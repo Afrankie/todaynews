@@ -1,0 +1,47 @@
+<view class="foodImage">
+  <image src="{{foodDetail.pic}}"></image>
+</view>
+<view class="split-line"></view>
+<view class="foodName">{{foodDetail.name}}<image wx:if='{{!hasCollect}}' src="/images/推荐.png"></image><image wx:if='{{!hasCollect}}' src="/images/hiscollect.png" bindtap="collect" data-foodid="{{foodDetail.id}}"></image><text wx:if='{{hasCollect}}' bindtap="noCollect" data-foodid="{{foodDetail.id}}">取消收藏</text></view>
+<view class="foodDetail">
+  <view>食用人数：
+    <text>{{foodDetail.peoplenum}}</text>
+  </view>
+  <view>烹饪时间：
+    <text>{{foodDetail.cookingtime}}</text>
+  </view>
+  <view>美食标签：
+    <text>{{foodDetail.tag}}</text>
+  </view>
+  <view>美食简介：
+    <text>{{foodDetail.content}}</text>
+  </view>
+</view>
+<view class="material">
+  <view class="foodMaterial">烹饪食材：</view>
+  <block wx:for="{{foodDetail.material}}">
+    <view class="materialItem">{{item.mname}}:{{item.amount}}</view>
+  </block>
+</view>
+<view class="split-line"></view>
+<view class="cookway">烹饪步骤</view>
+<view class="way-listbox">
+  <view class="way-list">
+    <view class="way-item" wx:for="{{foodDetail.process}}">
+      <text class="way-num">{{index+1}}</text>
+      <text class="way-detail">{{item.pcontent}}</text>
+    </view>
+  </view>
+</view>
+<view class="split-line"></view>
+<view class="cookimg">烹饪图片</view>
+<view class="pic-listbox">
+  <view class="pic-list">
+    <view class="pic-item" wx:for="{{foodDetail.process}}">
+      <text>{{index+1}}</text>
+      <image src="{{item.pic}}" mode="aspectFill"></image>
+    </view>
+  </view>
+</view>
+<view class="split-line"></view>
+<view class="end">---End---</view>

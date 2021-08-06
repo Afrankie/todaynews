@@ -1,0 +1,64 @@
+/* pages/people/people.wxss */
+.container{
+  padding: 15rpx;
+  padding-right: 0;
+  /* border: 1px solid red; */
+  height: fit-content;
+}
+.content-container{
+  width: 100%;
+}
+.box{
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  width: 100%;
+}
+.one{
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid red; */
+}
+.genderimage{
+  /* border: 1px solid red; */
+  width: 30rpx;
+  height: 30rpx;
+}
+.userimage{
+  /* border: 1px solid red; */
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+.rightbox{
+  padding-right: 30rpx;
+  /* padding-top: 10rpx; */
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex:1;
+  margin-left: 15rpx;
+  /* border: 1px solid red; */
+  /* border-bottom: 1px solid rgba(128, 128, 128,0.3); */
+}
+
+.namebox{
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+.namebox image{
+  margin-left: 7rpx;
+}
+.intro{
+  /* border: 1px solid red; */
+  font-size: 20rpx;
+  color: grey;
+  
+}
+.splitrow{
+  border-bottom: 1px solid grey;
+  width: 100%;
+  opacity: 0.25;
+}

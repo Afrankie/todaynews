@@ -1,0 +1,51 @@
+<!--pages/look/look.wxml-->
+<!-- <view class="search-container"> -->
+
+  <tab tabList="{{tabList}}" bind:clickTab="clickTab" tab-container="tab-container" tab="tab" tab-item="tab-item" item="item" active="active"/>
+  <!-- <view class="result-container"> -->
+    <view id="box1" class="result-content {{tabList[0].show ? 'show-content' : '' }}">
+
+      <text style="color:grey;font-size:25rpx;padding-left:10rpx;" class="hidden {{articles.length==0?'show':''}}">还木有数据哦</text>
+      <view class="tuijianList " >
+            <view class="tuijianItem " wx:for="{{articles}}" wx:key="item" data-id="{{item.id}}" hover-class="navigator-hover">
+                <navigator url="/pages/articledetail/articledetail?postid={{item.id}}&index={{index}}&postuserid={{item.postuserid}}" >
+                  <image class="faceimage" src="{{item.faceimage}}" mode="aspectFill"/>
+                  <text class="title">{{item.title}}</text>
+                </navigator>
+                <view class="one">
+                  <image class="userimage" src="{{item.userimage}}" mode="aspectFill" bindtap="gotopersonal" data-postuserid="{{item.postuserid}}" ></image>
+                  <text>{{item.username}}</text>
+                  <image class="likeimage" src="{{item.isThumbs ? '/images/like_fill.png' : '/images/like.png' }}"  data-postid="{{item.id}}" data-index="{{index}}" data-postuserid="{{item.postuserid}}" bindtap="thumbsUp" mode="aspectFill"></image>
+                  <text class="num">{{item.thumbs}}</text>
+                </view>
+            </view>
+        </view>    
+    </view>
+
+
+    <view id="box2" class="result-content {{tabList[1].show ? 'show-content' : '' }}">
+        
+      <text style="color:grey;font-size:25rpx;padding-left:10rpx;" class="hidden {{articles.length==0?'show':''}}">还木有数据哦</text>
+      <view class="tuijianList " >
+            <view class="tuijianItem " wx:for="{{articles}}" wx:key="item" data-id="{{item.id}}" hover-class="navigator-hover">
+                <navigator url="/pages/articledetail/articledetail?postid={{item.id}}&index={{index}}&postuserid={{item.postuserid}}" >
+                  <image class="faceimage" src="{{item.faceimage}}" mode="aspectFill"/>
+                  <text class="title">{{item.title}}</text>
+                </navigator>
+                <view class="one">
+                  <image class="userimage" src="{{item.userimage}}" mode="aspectFill"  bindtap="gotopersonal" data-postuserid="{{item.postuserid}}"></image>
+                  <text>{{item.username}}</text>
+                  <image class="likeimage" src="{{item.isThumbs ? '/images/like_fill.png' : '/images/like.png' }}"  data-postid="{{item.id}}" data-index="{{index}}" data-postuserid="{{item.postuserid}}" bindtap="thumbsUp" mode="aspectFill"></image>
+                  <text class="num">{{item.thumbs}}</text>
+                </view>
+            </view>
+      </view>   
+
+
+    </view>
+
+  <!-- </view> -->
+<!-- </view> -->
+<view class="addbtn hidden {{addbtnshow?'show':''}}" bindtap="publisharticle">
+  <image class="plusicon" src="/images/myplus.png"></image>
+</view>

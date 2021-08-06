@@ -1,0 +1,123 @@
+
+/* ==========新闻============= */
+.basic-info{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.bi-bottom2{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.bi-bottom1{
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+}
+
+.bi-bottom1 text{
+  color: grey;
+  font-size: 20rpx;
+  margin-left: 5rpx;
+  margin-right: 10rpx;
+}
+
+.bi-bottom2 text{
+  color: grey;
+  font-size: 20rpx;
+  margin-left: 5rpx;
+  margin-right: 10rpx;
+}
+
+.card1 {
+  border-bottom: 2px solid rgba(128, 128, 128, 0.196);
+  background-color: #ffffff;
+  margin: 10rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.card2 {
+  height: auto;
+  margin: 8rpx 4px 8rpx 4px;
+}
+
+.cardText{
+width: 68%;
+height: 180rpx;
+}
+
+.title{
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: center;
+  margin: 5rpx;
+}
+
+
+.image {
+  width: 30%;
+  height: 170rpx;
+  border-radius: 3rpx;
+  /* padding-top: 5rpx; */
+  background-color: #eeeeee;
+}
+
+
+/* =====导航栏======== */
+
+.box{
+  height: 50rpx;
+}
+.navbar {
+  width: 100%;
+  /* height: 90rpx; */
+  /* 文本不换行 */
+  white-space: nowrap;
+  display: flex;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #eee;
+  background: #fff;
+  align-items: center;
+  /* 固定在顶部 */
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  z-index: 999;
+}
+
+.nav-item {
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  height: 100%;
+  display: inline-block;
+  /* 普通文字大小 */
+  font-size: 32rpx;
+}
+
+.nav-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1rpx;
+  box-sizing: border-box;
+}
+
+.tab-on {
+  color: #fbbd08;
+  /* 选中放大 */
+  font-size: 34rpx !important;
+  font-weight: 600;
+  border-bottom: 4rpx solid #fbbd08 !important;
+}

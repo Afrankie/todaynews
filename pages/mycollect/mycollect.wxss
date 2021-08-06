@@ -1,0 +1,199 @@
+/* pages/mycollect/mycollect.wxss */
+
+
+/* tab自定义样式 */
+.tab-container{
+	width: 100%;
+	height: 40px;
+	background: #FFF;
+}
+.tab{
+	padding-left: 20px;
+	width: 100%;
+	height: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	line-height: 39px;
+	background: #FFF;
+  text-align: center;
+}
+.tab-item{
+	font-family: SourceHanSansCN-Normal;
+	display: inline-block;
+  
+  margin-right: 40rpx;
+	font-size: 14px;
+	color: rgba(34,34,34,1);
+}
+.tab-item:last-child {
+	margin-right: 40rpx;
+}
+.item{
+	width:fit-content;
+	font-family: SourceHanSansCN-Normal;
+	margin: auto;
+	font-size: 14px;
+	height: 39px;
+}
+
+.active{
+  color: #e0620d;
+	border-bottom: 2px solid #e0620d;
+	font-weight:600;
+}
+
+.result-content {
+  margin-top: 10px;
+  background: #FFF;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  display: none;
+}
+.show-content {
+  height: auto;
+  z-index: 2;
+  display: block;
+  overflow: auto;
+}
+
+/* 卡片样式 */
+.tuijianList{
+  width:722rpx;
+  box-sizing: border-box;
+  /* padding-right:-14rpx; */
+  flex-direction:row;
+ 
+}
+.tuijianList:after{
+  content: "";
+  display: block;
+  clear:both;
+}
+.tuijianItem:after{
+  content: "";
+  display: block;
+  clear:both;
+}
+.tuijianItem{
+  width:346rpx;
+  height:auto;
+  padding:14rpx;
+  padding-bottom:0;
+  margin-bottom:30rpx;
+  box-sizing: border-box;
+  text-align: left;
+  background:#fff;
+   /* float:left;  */
+   display: inline-block;
+   /* margin-right:14rpx;  */
+   margin-left:15rpx; 
+   box-shadow: 0 2px 6px 0 rgba(0,0,0,.12), 0 0 8px 0 rgba(0,0,0,.04);
+   position: relative;
+}
+.faceimage{
+  width:317rpx;
+  height:292rpx;
+}
+/* .tuijianItem text{
+    width:100%;
+    height:60rpx; 
+    line-height: 60rpx;
+    text-align: center;
+    color:#636363;
+    font-size:11pt;
+} */
+.title{
+  width: 100%;
+  color: black;
+  font-weight: bolder;
+  font-size:16px;
+}
+.userimage{
+  margin-right: 3px;
+  height: 19px;
+  width: 19px;
+  border-radius: 100%;
+}
+.likeimage{
+  
+  margin-left: auto;
+  margin-right: 3px;
+  height: 15px;
+  width: 15px;
+  
+}
+.num{
+  /* margin-left: auto; */
+  margin-right: 5px;
+}
+
+.one{
+  margin-top: 3px;
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  /* border: 1px solid red; */
+}
+
+.hidden{
+  display: none;
+}
+
+.show{
+  display: flex;
+}
+
+/* 这是菜谱 */
+.card {
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 5px 2px 2px #e1663198;
+    margin: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.image {
+    width: 30%;
+    height: 200rpx;
+    border-radius: 10px;
+    padding-top: 5rpx;
+    background-color: #eeeeee;
+}
+.cardText{
+  width: 65%;
+  height: 200rpx;
+  margin-left: 3%;
+}
+.histitle{
+  margin: 5rpx;
+  color:  #615e5e;
+}
+.content{
+  padding-bottom: 10rpx;
+}
+.content text{
+  color:  #615e5e;
+  font-size: 0.6rem;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.png{
+  position:absolute;
+  right:0px;
+  bottom:0px;
+}
+.png image{
+  width: 50rpx;
+  height: 50rpx;
+  float: right;
+}
