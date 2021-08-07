@@ -9,6 +9,7 @@
   </view>
 </swiper>
 
+<!-- 文章详情 -->
 <view class="article">
   <view class="title">{{title}}</view>
   <view class="basic-info">
@@ -20,19 +21,19 @@
   </view>
 </view>
 
-
-
+<!-- 占位 防止操作栏遮挡内容 -->
 <view class="zhanwei"/>
 
-<view wx:for="{{comments}}" class="cm">
+<!-- 一级评论 -->
+<view wx:for="{{comments}}" class="cm" bindtap="redirect" data-id="{{index}}">
   <view class="line1">
     <image src="{{item.user_image}}" class="user_image"/>
     <text class="user_name">{{item.user_name}}</text>
     <text wx:if="{{item.like_count == 0}}" class="zan">赞</text>
     <text wx:if="{{item.like_count > 0}}" class="zan">{{item.like_count}}</text>
     <view class="zanpic-box">
-      <image wx:if="{{item.like >= 1}}" src="/images/like_fill.png" class="thumbs_up"/>
-      <image wx:if="{{item.like == 0}}" src="/images/like.png" class="thumbs_up"/>
+      <image wx:if="{{item.like >= 1}}" src="/images/like_fill.png" class="thumbs_up" catchtap="cm_un_like" data-id="{{index}}"/>
+      <image wx:if="{{item.like == 0}}" src="/images/like.png" class="thumbs_up" catchtap="cm_like" data-id="{{index}}"/>
     </view>
     
   </view>
@@ -47,6 +48,7 @@
 
 <view class="zhanwei"/>
 
+<!-- 操作栏 -->
 <view class="caozuo" wx:if="{{show_xpl}}">
   <view class="xpl-box" bindtap="clickComment">
     <mp-icon icon="pencil" size="{{17}}" class="icon"></mp-icon>
@@ -57,12 +59,12 @@
     <mp-badge wx:if="{{comment_count > 0}}" content="{{comment_count}}" class="badge"/>
   </view>
 
-  <mp-icon wx:if="star == 0" icon="star" size="{{25}}" class="icon"></mp-icon>
-  <mp-icon wx:if="star == 1" icon="star" size="{{25}}" class="icon" type="field" color="orange"></mp-icon>
+  <mp-icon wx:if="{{star==0}}" icon="star" size="{{25}}" class="icon" bindtap="star"></mp-icon>
+  <mp-icon wx:if="{{star==1}}" icon="star" size="{{25}}" class="icon" type="field" color="orange" bindtap="un_star"></mp-icon>
 
   <view class="icon-box">
-    <mp-icon icon="like" size="{{25}}" class="icon"></mp-icon>
-    <mp-icon icon="like" size="{{25}}" class="icon" type="field" color="red"></mp-icon>
+    <mp-icon wx:if="{{like==0}}" icon="like" size="{{25}}" class="icon" bindtap="news_like"></mp-icon>
+    <mp-icon wx:if="{{like==1}}" icon="like" size="{{25}}" class="icon" type="field" color="red" bindtap="news_un_like"></mp-icon>
     <mp-badge wx:if="{{like_count > 0}}" content="{{like_count}}" class="badge"/>
   </view>
 

@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/news-detail/news-detail",
     "pages/new-index/new-index",
+    "pages/news-comments/news-comments",
+    "pages/news-detail/news-detail",
     "pages/home/index",
     "pages/look/look",
     "pages/logs/logs",
@@ -35,12 +36,6 @@
         "selectedIconPath": "images/home_active.png"
       },
       {
-        "pagePath": "pages/news-detail/news-detail",
-        "text": "详情",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home.png"
-      },
-      {
         "pagePath": "pages/search/search",
         "text": "搜索",
         "iconPath": "images/search.png",
@@ -70,5 +65,4 @@
   "useExtendedLib": {
     "weui": true
   }
-  
 }

@@ -9,7 +9,7 @@
 
 
 <block wx:for="{{articles}}" wx:key="item">
- <navigator url="/pages/news-detail/news-detail?urlid={{item.url_id}}">
+ <navigator url="/pages/news-detail/news-detail?url_id={{item.url_id}}">
  
   <view class="card1" wx:if="{{item.pic_urls.length > 0}}">
     <view class="cardText">

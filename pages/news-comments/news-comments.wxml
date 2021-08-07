@@ -1,0 +1,62 @@
+<!--pages/news-comments/news-comments.wxml-->
+<!-- 一级评论 -->
+<view class="cm">
+  <view class="line1">
+    <image src="{{fc.user_image}}" class="user_image"/>
+    <text class="user_name">{{fc.user_name}}<text class="louzhu">楼主</text></text>
+    <text wx:if="{{fc.like_count == 0}}" class="zan">赞</text>
+    <text wx:if="{{fc.like_count > 0}}" class="zan">{{fc.like_count}}</text>
+    <view class="zanpic-box">
+      <image wx:if="{{fc.like >= 1}}" src="/images/like_fill.png" class="thumbs_up" bindtap="cm_un_like"/>
+      <image wx:if="{{fc.like == 0}}" src="/images/like.png" class="thumbs_up" bindtap="cm_like"/>
+    </view>
+  </view>
+  <view class="line2">{{fc.content}}</view>
+  <view class="line3">
+    <text class="huifu-time">{{fc.relative_time}}</text>
+  </view>
+</view>
+
+<view class="tip">全部回复</view>
+
+<view wx:if="{{sub_comments.length == 0}}" class="nocm">还没有评论，快来抢沙发把~</view>
+<!-- 二级评论 -->
+<view wx:for="{{sub_comments}}" data-id="{{index}}" class="cm" bindtap="refer">
+  <view class="line1">
+    <image src="{{item.user_image}}" class="user_image"/>
+    <text class="user_name">{{item.user_name}}</text>
+    <text wx:if="{{item.like_count == 0}}" class="zan">赞</text>
+    <text wx:if="{{item.like_count > 0}}" class="zan">{{item.like_count}}</text>
+    <view class="zanpic-box">
+      <image wx:if="{{item.like >= 1}}" src="/images/like_fill.png" class="thumbs_up" catchtap="scm_un_like" data-id="{{index}}"/>
+      <image wx:if="{{item.like == 0}}" src="/images/like.png" class="thumbs_up" catchtap="scm_like" data-id="{{index}}"/>
+    </view>
+  </view>
+  <view wx:if="{{item.refer_user_id != ''}}" wx:if="{{item.refer_user_id != 0}}" class="line1dot9">
+    @{{item.reply_user_name}}<text decode="{{true}}">&nbsp;</text>:<text decode="{{true}}">&nbsp;</text>{{item.reply_content}}
+  </view>
+  <view class="line2">{{item.content}}</view>
+  <view class="line3">
+    <text class="huifu">回复></text>
+    <text class="huifu-time">{{item.relative_time}}</text>
+  </view>
+</view>
+
+<view class="zhanwei"/>
+
+<!-- 操作栏 -->
+<view class="caozuo" wx:if="{{show_xpl}}">
+  <view class="xpl-box" bindtap="clickComment">
+    <mp-icon icon="pencil" size="{{17}}" class="icon"></mp-icon>
+    <text>写评论...</text>
+  </view>
+
+  <mp-icon icon="share" size="{{25}}" class="icon"></mp-icon>
+</view>
+
+<!-- 输入框 -->
+<view wx:if="{{show_xpl == false}}" class="shuru-box">
+  <textarea class="shuru" name="ta" id="shuru" cols="30" rows="2" value="{{ta_content}}" placeholder="{{ph}}" bindblur="blur" focus="{{focus}}" bindinput="getTAValue" ></textarea>
+  <text bindtap="addSubComments">发布</text>
+</view>
+
