@@ -66,8 +66,8 @@ App({
     isLogin: false,
     userInfo: null,
     // 同时修改util下的user.js的url
-    surl:"http://127.0.0.1:8888",
-    // surl:"http://127.0.0.1:8080",
+    // surl:"http://127.0.0.1:8888",
+    surl:"http://127.0.0.1:8080",
 
 
     navBarHeight: 0, // 导航栏高度

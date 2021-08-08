@@ -1,5 +1,6 @@
-// pages/changeinfo/changeinfo.js
+var user = require("../../utils/user.js")
 const app = getApp()
+
 Page({
 
   /**
@@ -7,43 +8,45 @@ Page({
    */
   data: {
     modalhide:true,
-    username:'',
-    state:{},
-    gender: ['男', '女'],
+
+    // 性别滚动栏
     index:0,
-    objectArray: [
-      {
-        id: 0,
-        name: '男'
-      },
-      {
-        id: 1,
-        name: '女'
-      }
-    ],
+    gender: ['男', '女'],
+    
+    // 地区选择相关
     region: ['', '', ''],
     customItem: '全部',
-    genderinfo:'',
+
+    //绑定自我介绍输入框
     inputValue:null,
-    content:''
+
+    user_name:'',
+    user_image:'',
+    intro:''
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    var state = decodeURIComponent(options.state)
-    state = JSON.parse(state)
-    this.setData({
-      state: state,
-      index: state.gender=='男'?'0':'1',
-      region: [state.province,state.city,''],
-      inputValue:state.intro,
-      username: state.username,
-      faceimage:state.image,
-      bgimage: state.bgimage == '' ? '/images/bg.jpg' : state.bgimage,
-      content:state.intro
+    var that = this
+    var userInfo = app.globalData.userInfo
+    var user_id = userInfo.id
+
+    var param = {'user_id':user_id}
+    
+    user.getUserInfo(app, param, function(data){
+      that.setData({
+        index: data.gender=='男'?'0':'1',
+        region: [data.province,data.city,''],
+        inputValue:data.intro,
+        user_name:data.user_name,
+        user_image:data.user_image,
+        bgimage: '/images/bg.jpg',
+        intro:data.intro,
+      })
     })
+
   },
   bindPickerChange: function (e) {
     this.setData({
@@ -87,20 +90,20 @@ Page({
       state:state
     })
 
-    wx.request({
-      url: app.globalData.surl + "/user/changeinfo",
-      method: "POST",
-      data: {
-        openid: app.globalData.openid,
-        userinfo: JSON.stringify(userinfo)
-      },
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      success: function (res) {
-        console.log(res.data)
-      }
-    })
+    // wx.request({
+    //   url: app.globalData.surl + "/user/changeinfo",
+    //   method: "POST",
+    //   data: {
+    //     openid: app.globalData.openid,
+    //     userinfo: JSON.stringify(userinfo)
+    //   },
+    //   header: {
+    //     "Content-Type": "application/x-www-form-urlencoded"
+    //   },
+    //   success: function (res) {
+    //     console.log(res.data)
+    //   }
+    // })
   },
   addFaceImage() {
     var _this = this;

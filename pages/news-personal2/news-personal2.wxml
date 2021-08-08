@@ -1,0 +1,45 @@
+<!-- 页面 用户主页 -->
+<image class="bgiamge" src="/images/bg.jpg"></image>
+
+<view class="info-box">
+  <view class="line1">
+    <image class="user_image" src="{{user_image}}"></image>  
+    
+    <view wx:if="{{follow && my_user_id!=id}}" class="yiguanzu">已关注</view>
+    <view wx:if="{{!follow && my_user_id!=id}}" class="guanzhu">+关注</view>
+    <view wx:if="{{my_user_id==id}}" class="bianji" catchtap="edit_info">编辑资料</view>
+  </view>
+  <view class="line2">
+    <view class="user_name">{{user_name}}</view>
+    <view class="gender-box">
+      <image wx:if="{{gender=='男'}}" src="/images/male.png"></image>
+      <image wx:if="{{gender=='女'}}" src="/images/female.png"></image>
+      <view class="gender_text">{{gender}}</view>
+    </view>
+  </view>
+  <view class="line3">
+    <view class="info">
+      <view class="num">0</view>
+      <view class="info-key">头条</view>
+    </view>
+    <view class="info">
+      <view class="num">{{all_like_count}}</view>
+      <view class="info-key">获赞</view>
+    </view>
+    <view class="info">
+      <view class="num">{{fans_count}}</view>
+      <view class="info-key">粉丝</view>
+    </view>
+    <view class="info">
+      <view class="num">{{guanzhu_count}}</view>
+      <view class="info-key">关注</view>
+    </view>
+  </view>
+
+  <view class="intro" wx:if="{{intro=='' && my_user_id==id}}">填写简介内容更容易获得大家的关注哦，<text class="qutianxie" catchtap="edit_info">去填写</text></view>
+  <view class="intro" wx:if="{{intro=='' && my_user_id!=id}}">这个人很懒，什么都没留下。</view>
+  <view class="intro" wx:if="{{intro!=''}}">{{intro}}</view>
+</view>
+
+<view class="zhanwei">TA还没有发布内容哦~</view>
+

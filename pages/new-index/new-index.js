@@ -39,13 +39,11 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    // var tabCur = that.data.tabCur
-    // var tag_id = that.data.tags[tabCur].id
-    // var param = {'tag_id':tag_id}
+
     var param = {}
     news.getNews(param, function(data){
-      
       var articles = data.articles
+      
       that.setData({
         tags:data.tags,
         articles:articles,
@@ -54,7 +52,6 @@ Page({
         navBarHeight:app.globalData.navBarHeight
       })
     })
-    
     
   },
 
@@ -88,8 +85,11 @@ Page({
 
   newsRefresh: function(tabCur) {
     var that = this;
-    var tag_id = that.data.tags[tabCur].id
+    var tags = that.data.tags 
+    var tag = tags[tabCur]
     var articles = that.data.articles
+    
+    var tag_id = tag.id
     var top_url_id = -1
     if (articles.length > 0) top_url_id = articles[0].url_id
     var param = {"tag_id":tag_id, "top_url_id":top_url_id}
@@ -131,7 +131,7 @@ Page({
       console.log(data)
       that.data.articles.push(...data.articles)
       that.setData({
-        tags:data.tags,
+        // tags:data.tags,
         articles:that.data.articles,
       })
     })

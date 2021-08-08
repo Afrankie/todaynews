@@ -1,8 +1,10 @@
 var cm = require("../../utils/comment.js")
-var news = require("../../utils/news.js")
-var app = getApp();
-var user_id = app.globalData.userInfo == undefined ? -1 : app.globalData.userInfo.id
-var user_name = app.globalData.userInfo == undefined ? -1 : app.globalData.userInfo.user_name
+var news = require("../../utils/news.js");
+const user = require("../../utils/user.js");
+const util = require("../../utils/util.js");
+const app = getApp();
+//onload时从globalData赋值
+var user_id = -1
 // 页面跳转携带
 var url_id = -1
 
@@ -82,7 +84,7 @@ Page({
     var parent_id = that.data.comments[idx].id
     
     wx.navigateTo({
-      url: '/pages/news-comments/news-comments?url_id='+url_id+"&parent_id="+parent_id,
+      url: '/pages/news-comments/news-comments?url_id='+url_id+"&parent_id="+parent_id+"&user_id="+user_id,
     })
   },
 
@@ -186,6 +188,26 @@ Page({
       })
     })
   },
+  // 跳转到用户个人信息页面
+  goPersonal2(e){
+    var that = this
+    var idx = e.currentTarget.dataset.id
+    var comments = that.data.comments
+    var user_id = comments[idx].user_id
+
+    wx.navigateTo({
+      url: '/pages/news-personal2/news-personal2?user_id='+user_id,
+    })
+  },
+
+  // 滑动到评论区
+  scrollToHere(){
+    var that = this
+    var pics = that.data.pics
+
+    // 由于轮播图时定位是fixed的，所以计算滑动距离时需要加上轮播图的高度
+    util.scrollTo("article")
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -193,8 +215,10 @@ Page({
   onLoad: function (options) {
       var that = this
       url_id = options.url_id
-      
-      var param = {"url_id":url_id, "user_id":that.data.user_id}
+      var userInfo = app.globalData.userInfo
+      user_id = userInfo.id
+      // console.log(userInfo)
+      var param = {"url_id":url_id, "user_id":user_id}
       news.getNewById(param, function(data){
         that.setData({
           pics:data.pics,

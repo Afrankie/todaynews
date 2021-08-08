@@ -50,7 +50,7 @@
       <view class="line1dot0">
         <image class="user_image" src="{{user_image}}"></image>
         <view class="line1">
-          <view class="author">{{item.author}}</view>
+          <view class="author">{{user_name}}</view>
           <view class="relative_time">{{item.relative_time}}</view>
         </view>
       </view>

@@ -1,8 +1,15 @@
+// const app = getApp()
 var req = require("./req.js")
+
+function getUserInfo(app, param, callback){
+  var surl = app.globalData.surl + "/user/info"
+  var surl = req.gen_url(surl, param)
+  req.do_get(surl, callback)
+}
 
 function getOpenId(app, param, callback){
   var surl = app.globalData.surl + "/user/openid"
-  var param = req.gen_url(surl, param)
+  var surl = req.gen_url(surl, param)
   req.do_get(surl, callback)
 }
 
@@ -13,8 +20,9 @@ function login1(app, callBack) {
     //获取code
     success: function (res) {
       var code = res.code; //返回code
-      console.log(code)
+      console.log('code为:'+code)
       var param = {'code':code}
+      
       getOpenId(app, param, function(data){
         var openid = data.openid
         app.globalData.openid = data.openid
@@ -49,5 +57,6 @@ function login2 (app, callBack) {
 
 module.exports = {
   login1:login1,
-  getOpenId:getOpenId
+  getOpenId:getOpenId,
+  getUserInfo:getUserInfo
 }

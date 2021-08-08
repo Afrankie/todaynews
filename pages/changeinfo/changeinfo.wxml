@@ -3,7 +3,7 @@
   <view class="one box" bindtap="addFaceImage">
     <text>头像</text>
     <view class="rightbox">
-      <image class="imagebox" src="{{faceimage}}"></image>
+      <image class="imagebox" src="{{user_image}}"></image>
       <image class="righticon" src="/images/right.png"></image>
     </view>
   </view>
@@ -21,7 +21,7 @@
   <view class="one box" bindtap="inputname">
     <text>昵称</text>
     <view class="rightbox">
-      <text>{{username}}</text>
+      <text>{{user_name}}</text>
       <image class="righticon" src="/images/right.png"></image>
     </view>
   </view>

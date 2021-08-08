@@ -52,3 +52,6 @@
   </view>
 </navigator>
 </block>
+
+<!-- 底部占位 -->
+<view class="zhanwei" wx:if="{{articles.length > 0}}">已经到底啦~</view>

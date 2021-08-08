@@ -1,4 +1,4 @@
-<!--pages/news-comments/news-comments.wxml-->
+<!-- 评论详情页，包含一二级评论 -->
 <!-- 一级评论 -->
 <view class="cm">
   <view class="line1">
@@ -21,7 +21,7 @@
 
 <view wx:if="{{sub_comments.length == 0}}" class="nocm">还没有评论，快来抢沙发把~</view>
 <!-- 二级评论 -->
-<view wx:for="{{sub_comments}}" data-id="{{index}}" class="cm" bindtap="refer">
+<view wx:for="{{sub_comments}}" wx:key="id" data-id="{{index}}" class="cm" bindtap="refer">
   <view class="line1">
     <image src="{{item.user_image}}" class="user_image"/>
     <text class="user_name">{{item.user_name}}</text>

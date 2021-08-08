@@ -2,9 +2,8 @@
 var cm = require("../../utils/comment.js")
 var news = require("../../utils/news.js");
 const req = require("../../utils/req.js");
-var app = getApp();
-var user_id = app.globalData.userInfo == undefined ? -1 : app.globalData.userInfo.id
-var user_name = app.globalData.userInfo == undefined ? -1 : app.globalData.userInfo.user_name
+const app = getApp();
+var user_id = -1
 // 页面跳转携带
 var url_id = -1
 var parent_id = -1
@@ -36,7 +35,6 @@ Page({
     var idx = e.currentTarget.dataset.id
     var reply_id = that.data.sub_comments[idx].id
     var reply_user_name = that.data.sub_comments[idx].user_name
-
     that.setData({
       // 非通用
       reply_id:reply_id,
@@ -175,8 +173,12 @@ Page({
   onLoad: function (options) {
     var that = this
 
-    url_id = options.url_id
-    parent_id = options.parent_id
+    var userInfo = app.globalData.userInfo
+    user_id = userInfo.id
+
+    url_id = parseInt(options.url_id)
+    parent_id = parseInt(options.parent_id)
+    
 
     var param = {'url_id':url_id, 'parent_id':parent_id, 'user_id':user_id}
     

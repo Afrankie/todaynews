@@ -1,6 +1,6 @@
 <!-- 轮播图 -->
-<swiper indicator-dots="true" indicator-color="#F8F8FF" indicator-active-color="#A9A9A9" circular="true" autoplay="true" interval="5000" duration="500" class='swiper-wrapper'>
-  <view wx:for="{{pics}}">
+<swiper wx:if="{{pics.length > 0}}" indicator-dots="true" indicator-color="#F8F8FF" indicator-active-color="#A9A9A9" circular="true" autoplay="true" interval="5000" duration="500" class='swiper-wrapper'>
+  <view wx:for="{{pics}}" wx:key="url">
     <swiper-item>
      <image src="{{item.url}}" class="slide-image"/>
      
@@ -11,7 +11,7 @@
 </swiper>
 
 <!-- 文章详情 -->
-<view class="article">
+<view class="article" id="article" id="article">
   <view class="title">{{title}}</view>
   <view class="basic-info">
     <text>{{author}}</text>
@@ -22,13 +22,10 @@
   </view>
 </view>
 
-<!-- 占位 防止操作栏遮挡内容 -->
-<view class="zhanwei"/>
-
 <!-- 一级评论 -->
-<view wx:for="{{comments}}" wx:key="{{id}}" class="cm" bindtap="redirect" data-id="{{index}}">
+<view wx:for="{{comments}}" wx:key="id" class="cm">
   <view class="line1">
-    <image src="{{item.user_image}}" class="user_image"/>
+    <image src="{{item.user_image}}" class="user_image" data-id="{{index}}" catchtap="goPersonal2"/>
     <text class="user_name">{{item.user_name}}</text>
     <text wx:if="{{item.like_count == 0}}" class="zan">赞</text>
     <text wx:if="{{item.like_count > 0}}" class="zan">{{item.like_count}}</text>
@@ -38,8 +35,8 @@
     </view>
     
   </view>
-  <view class="line2">{{item.content}}</view>
-  <view class="line3">
+  <view class="line2" bindtap="redirect" data-id="{{index}}">{{item.content}}</view>
+  <view class="line3" bindtap="redirect" data-id="{{index}}">
     <text class="huifu"><block wx:if="{{item.count > 0}}">{{item.count}}</block>回复></text>
     <text class="huifu-time">{{item.relative_time}}</text>
   </view>
@@ -47,7 +44,11 @@
 </view>
 <view wx:if="{{comments.length == 0}}" class="nocm">还没有评论，快来抢沙发把~</view>
 
-<view class="zhanwei"/>
+<!-- 占位 -->
+<view class="zhanwei">
+已经到底部了~
+</view>
+
 
 <!-- 操作栏 -->
 <view class="caozuo" wx:if="{{show_xpl}}">
@@ -55,7 +56,7 @@
     <mp-icon icon="pencil" size="{{17}}" class="icon"></mp-icon>
     <text>写评论...</text>
   </view>
-  <view class="icon-box">
+  <view class="icon-box" catchtap="scrollToHere">
     <mp-icon icon="comment" size="{{25}}" class="icon"></mp-icon>
     <mp-badge wx:if="{{comment_count > 0}}" content="{{comment_count}}" class="badge"/>
   </view>

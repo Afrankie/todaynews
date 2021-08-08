@@ -2,7 +2,7 @@
 <view class="nav-bar" style="height:{{navBarHeight}}px;">
     <image class="icon-back" src="/images/left.png" catchtap="goback" style="height:{{menuHeight - 13}}px; min-height:{{menuHeight - 13}}px; line-height:{{menuHeight - 13}}px; left:{{menuRight - 25}}px; bottom:{{menuBotton + 6}}px;"></image>
     <image class="icon-search" src="/images/search.png" style="height:{{menuHeight - 15}}px; min-height:{{menuHeight - 15}}px; line-height:{{menuHeight - 15}}px; left:{{menuRight + 10}}px; bottom:{{menuBotton + 6}}px;"></image>
-    <input bindinput="getInput" value="{{input_value}}" class="search" placeholder="{{ph}}" style="height:{{menuHeight}}px; min-height:{{menuHeight}}px; line-height:{{menuHeight}}px; left:{{menuRight}}px; bottom:{{menuBotton}}px;"></input>
+    <input focus="{{true}}" bindinput="getInput" value="{{input_value}}" class="search" placeholder="{{ph}}" style="height:{{menuHeight}}px; min-height:{{menuHeight}}px; line-height:{{menuHeight}}px; left:{{menuRight}}px; bottom:{{menuBotton}}px;"></input>
     <view class="sousuo" catchtap="dosearch" style="height:{{menuHeight}}px; min-height:{{menuHeight}}px; line-height:{{menuHeight}}px; left:62%; bottom:{{menuBotton}}px;">搜索</view>
 </view>
 

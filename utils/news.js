@@ -3,7 +3,7 @@ var req = require("./req.js")
 var app = getApp();
 
 function getNewById(param,callback){
-  var surl = app.globalData.surl + "/news"
+  var surl = app.globalData.surl + "/news/details"
   surl = req.gen_url(surl, param)
   req.do_get(surl, callback)
 }

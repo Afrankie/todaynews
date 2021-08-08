@@ -1,7 +1,8 @@
 // pages/news-star/news-star.js
 var news = require("../../utils/news.js")
-var app = getApp()
-var user_id = app.globalData.userInfo == undefined ? -1 : app.globalData.userInfo.id
+const app = getApp()
+var user_id = -1
+var user_name = ""
 
 Page({
 
@@ -44,7 +45,6 @@ Page({
     
     var param = {'user_id':user_id}
     var func = function(data){
-      console.log(data)
       that.setData({
         articles:data.articles
       })
@@ -104,6 +104,9 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    var userInfo = app.globalData.userInfo
+    user_id = userInfo.id
+    user_name = userInfo.user_name
     var tags = that.data.tags
     
     var tag_name = options.tag_name

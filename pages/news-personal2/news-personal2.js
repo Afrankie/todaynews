@@ -1,16 +1,25 @@
 var user = require("../../utils/user.js")
-var app = getApp();
-var user_id = -1
+const app = getApp();
 
-// pages/news-personal/news-personal.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isLogin:false,
-    guanggao_pics:[],
+    // 页面onload时自己赋值，用于判断是否是自己的展示页
+    "my_user_id":-1,
+    //页面跳转时携带
+    "user_id":"",
+
+  },
+
+  // 编辑个人信息
+  edit_info(){
+    wx.navigateTo({
+      url: '/pages/changeinfo/changeinfo',
+    })
   },
 
   /**
@@ -19,45 +28,25 @@ Page({
   onLoad: function (options) {
     var that = this
     var userInfo = app.globalData.userInfo
-    user_id = userInfo.id
-    console.log("personal")
-    console.log(userInfo)
+    var my_user_id =  userInfo.id
     that.setData({
-      user_name:userInfo.user_name,
-      user_image:userInfo.user_image,
-      isLogin:app.globalData.isLogin,
-      guanggao_pics:[
-        {'url':'/images/guanggao.png'},
-        {'url':'/images/guanggao.png'},
-      ]
+      my_user_id:my_user_id  
     })
-  },
 
-  // 跳转到个人详情页
-  goPersonal2(){
-    wx.navigateTo({
-      url: '/pages/news-personal2/news-personal2?user_id='+user_id,
-    })
-  },
-
-  // 获取收藏文章
-  getStar(){
-    wx.navigateTo({
-      url: '/pages/news-star/news-star?tag_name=收藏&user_id='+user_id,
-    })
-  },
-
-  // 获取浏览历史
-  getHistory(){
-    wx.navigateTo({
-      url: '/pages/news-star/news-star?tag_name=历史&user_id='+user_id
-    })
-  },
-
-  // 登录
-  login(){
-    wx.reLaunch({
-      url: '/pages/authorize/authorize',
+    var user_id = options.user_id
+    var param = {'user_id':user_id}
+    user.getUserInfo(app, param, function(data){
+      // TODO 待添加背景页面
+      that.setData({
+        user_image:data.user_image,
+        id:data.id,
+        user_name:data.user_name,
+        intro:data.intro,
+        all_like_count:0,
+        guanzhu_count:0,
+        fans_count:0,
+        gender:data.gender,
+      })
     })
   },
 

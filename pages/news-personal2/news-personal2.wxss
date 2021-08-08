@@ -1,0 +1,119 @@
+.bgiamge{
+  width: 100%;
+  height: 250rpx;
+  position: absolute;
+  top: 0;
+  z-index: -2;
+}
+/* 页面第一大块 */
+.info-box{
+  border-top-left-radius: 10px;     /* 左上角 */
+  border-top-right-radius: 10px;    /* 右上角 */
+  
+  border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+  background-color: white;
+  margin-top: 230rpx;
+  padding-top: 0;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+}
+.user_image{
+  width: 160rpx;
+  height:160rpx;
+  border-radius: 500rpx;
+  position: relative;
+  top: -35rpx;
+}
+.line1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/* 关注 已关注 编辑 */
+.line1 view{
+  border-radius: 5rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 28rpx;
+  width: 30%;
+}
+.yiguanzhu{
+  border: 1px solid rgba(128, 128, 128, 0.212);
+}
+.guanzhu{
+  color: white;
+  background-color: red;
+}
+.bianji{
+  border: 1px solid rgba(128, 128, 128, 0.212);
+}
+.line2{
+  display: flex;
+  flex-direction: row;
+}
+.line2 image{
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 21rpx;
+  height: 21rpx;
+}
+.user_name{
+  font-size: 40rpx;
+  font-weight: 500;
+}
+.gender-box{
+  border-radius: 5rpx;
+  margin-left: 10rpx;
+  padding: 5rpx;
+  background-color: rgba(128, 128, 128, 0.1);
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: row;
+}
+.gender_text{
+  margin-left: 3rpx;
+  font-size: 25rpx;
+}
+.line3{
+  display: flex;
+  flex-direction: row;
+}
+.info{
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+}
+.num{
+  font-size: 35rpx;
+  font-weight: 400;
+}
+.info-key{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 5rpx;
+  font-size: 26rpx;
+  color: rgba(128, 128, 128, 0.822);
+}
+.intro{
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: rgba(128, 128, 128, 0.822);
+}
+.qutianxie{
+  color: rgb(127, 236, 255);
+}
+
+
+.zhanwei{
+  width: 100%;
+  text-align: center;
+  line-height: 600rpx;
+  font-size: 24rpx;
+  color: rgba(128, 128, 128, 0.822);
+}
+
+

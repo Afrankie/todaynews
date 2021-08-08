@@ -16,7 +16,7 @@ function do_post(url, post_data, callback){
     method: "POST",
     data: post_data,
     header: {
-      "Content-Type": "application/x-www-form-urlencoded"
+      "Content-Type": "application/json"
     },
     success: function (res) {
       callback && callback(res.data);

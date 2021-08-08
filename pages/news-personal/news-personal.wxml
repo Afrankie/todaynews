@@ -1,10 +1,11 @@
+<!-- 页面：我的 -->
 <!-- 未登录时的第一大块 -->
 <view class="line1dot1" wx:if="{{isLogin == false}}">
   <button class="denglu" catchtap="login">登录</button>
 </view>
 
 <!-- 登录时的第一大块 -->
-<view class="line1dot2" wx:if="{{isLogin == true}}">
+<view class="line1dot2" wx:if="{{isLogin == true}}" catchtap="goPersonal2">
   <image class="user_image" src="{{user_image}}"></image>
   <view class="user_name">{{user_name}}</view>
   <view class="rightarow">></view>
@@ -15,7 +16,7 @@
 
 <!-- 轮播图 -->
 <swiper indicator-dots="true" indicator-color="#DCDCDC" indicator-active-color="#F8F8FF" circular="true" autoplay="true" interval="2500" duration="500" class='swiper-wrapper'>
-  <view wx:for="{{guanggao_pics}}">
+  <view wx:for="{{guanggao_pics}}" wx:key="url">
     <swiper-item>
      <image src="{{item.url}}" class="slide-image"/>
     </swiper-item>
