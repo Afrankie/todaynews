@@ -1,5 +1,6 @@
 // pages/new-index/new-index.js
 var news = require("../../utils/news.js")
+var app = getApp()
 
 Page({
 
@@ -7,12 +8,20 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 滑动栏相关
+    navBarHeight:"50",
     tabCur: 0, //默认选中
     tags: [],
+
+    // 页面onload时初始化
     articles: [],
+
+    //自定义导航栏
+    ph:"请输入关键字",
+    to_url:"/pages/search/search"
   },
 
-
+  //顶部滑动栏
   tabSelect(e) {
     var that = this
     var tabCur = e.currentTarget.dataset.id
@@ -30,14 +39,23 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    // var tabCur = that.data.tabCur
+    // var tag_id = that.data.tags[tabCur].id
+    // var param = {'tag_id':tag_id}
     var param = {}
     news.getNews(param, function(data){
-      console.log(data)
+      
+      var articles = data.articles
       that.setData({
         tags:data.tags,
-        articles:data.articles,
+        articles:articles,
+        
+        //自定义导航栏相关
+        navBarHeight:app.globalData.navBarHeight
       })
     })
+    
+    
   },
 
   /**
@@ -71,7 +89,9 @@ Page({
   newsRefresh: function(tabCur) {
     var that = this;
     var tag_id = that.data.tags[tabCur].id
-    var top_url_id = that.data.articles[0].url_id
+    var articles = that.data.articles
+    var top_url_id = -1
+    if (articles.length > 0) top_url_id = articles[0].url_id
     var param = {"tag_id":tag_id, "top_url_id":top_url_id}
     news.getNews(param, function(data){
       if (data.articles == {} || typeof data.articles === undefined) {
@@ -103,7 +123,9 @@ Page({
   onReachBottom: function () {
     var that = this;
     var tag_id = that.data.tags[that.data.tabCur].id
-    var bottom_url_id = that.data.articles[that.data.articles.length - 1].url_id
+    var articles = that.data.articles
+    var bottom_url_id = -1
+    if (articles.length > 0) bottom_url_id = articles[articles.length - 1].url_id
     var param = {"tag_id":tag_id, "bottom_url_id":bottom_url_id}
     news.getNews(param, function(data){
       console.log(data)

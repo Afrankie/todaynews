@@ -81,50 +81,6 @@ Page({
       }
     })
   },
-  onShow(options) {
-    var _this = this
-    if (_this.data.flag == '1') {
-      var articles = _this.data.state.articles
-      articles[_this.data.index].isThumbs = _this.data.isThumbs
-      articles[_this.data.index].thumbs = _this.data.thumbs
-      _this.setData({
-        articles: articles,
-        flag: '0'
-      })
-
-    }
-    if (_this.data.flag == '2') {
-      _this.setData({
-        flag: '0'
-      })
-    }else{
-      var uid = _this.data.uid
-      var tabList = _this.data.tabList
-      if (uid == app.globalData.openid) {
-        tabList[1].name = "关于我"
-      } else {
-        tabList[1].name = "关于TA"
-      }
-      wx.request({
-        url: app.globalData.surl + '/user/personal?openid=' + uid + '&selfopenid=' + app.globalData.openid,
-        header: {
-          'content-type': 'json' // 默认值
-        },
-        success(res) {
-
-          console.log(res.data)
-
-          _this.setData({
-            editshow: uid == app.globalData.openid,
-            tabList: tabList,
-            state: res.data.state
-          })
-        }
-      })      
-    }
-
-    
-  },
   follow(){
     wx.request({
       url: app.globalData.surl + '/user/follow/'+ this.data.uid + '?openid=' + app.globalData.openid,

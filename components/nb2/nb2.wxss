@@ -1,0 +1,30 @@
+.nav-bar{ 
+  position: fixed; width: 100%; top: 0; color: #fff; background: white;
+  z-index: 1;
+
+}
+.nav-bar .search{ 
+  width: 50%; 
+  color: #333; 
+  font-size: 14px; 
+  position: absolute; 
+  border-radius: 50px; 
+  background: rgba(0, 0, 0, 0.041); 
+  padding-left: 33px;
+}
+.icon-search{
+  z-index: 2;
+  width: 35rpx;
+  /* height: 40rpx; */
+  position: absolute; 
+}
+.icon-back{
+  width: 30rpx;
+  position: absolute; 
+}
+.sousuo{
+  position: absolute; 
+  letter-spacing: 1rpx;
+  color: red;
+}
+

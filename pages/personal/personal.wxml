@@ -19,7 +19,7 @@
         <image class="rightimage" src="/images/following.png"></image>
       </view>
     </view>
-    <view class="username">{{state.username}}</view>
+    <view class="username">{{state.user_name}}</view>
     <view class="one state">
       <view bindtap="gofollowing" data-postuserid="{{state.postuserid}}">
         关注 <text>{{state.following_num}}</text>
@@ -32,10 +32,10 @@
       <view>
         获赞数 <text>{{state.thumbs}}</text>
       </view>
-      <view class="splitcol"></view>
+      <!-- <view class="splitcol"></view>
       <view>
         被阅读量 <text>{{state.views}}</text>
-      </view>
+      </view> -->
     </view>
     <view class="one bottombox">
       <view class="malebox hidden {{state.gender=='男' ? 'show' : '' }}">
@@ -58,7 +58,7 @@
 
       <text class="noinputtext hidden {{state.articles.length==0?'show':''}}">还没个人动态哦</text>
 
-      <view class="tuijianList " >
+      <!-- <view class="tuijianList " >
             <view class="tuijianItem " wx:for="{{state.articles}}" wx:key="item" data-id="{{item.id}}" hover-class="navigator-hover">
                 <navigator url="/pages/articledetail/articledetail?postid={{item.id}}&index={{index}}&postuserid={{item.postuserid}}" >
                   <image class="faceimage" src="{{item.faceimage}}" mode="aspectFill"/>
@@ -71,7 +71,7 @@
                   <text class="num">{{item.thumbs}}</text>
                 </view>
             </view>
-      </view>
+      </view> -->
       
     </view>
     <view class="result-content {{tabList[1].show ? 'show-content' : '' }}">

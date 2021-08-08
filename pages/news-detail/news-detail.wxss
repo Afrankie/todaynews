@@ -93,6 +93,7 @@
   padding-left: 80rpx;
   font-size: 30rpx;
   letter-spacing: 1rpx;
+  
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -163,7 +164,7 @@
   height: 70rpx;
 }
 
-/* =====滚动栏======= */
+/* =====轮播图======= */
 .swiper-wrapper{
     height: 400rpx;
 }

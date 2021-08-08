@@ -1,5 +1,9 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar",
+    "news": "/components/news/news"
+  },
   "enablePullDownRefresh": true,
-  "backgroundTextStyle":"light"
+  "backgroundTextStyle":"light",
+  "navigationStyle": "custom"
 }

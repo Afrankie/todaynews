@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "nb2": "/components/nb2/nb2",
+    "news": "/components/news/news"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "black"
 }

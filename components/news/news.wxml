@@ -1,0 +1,54 @@
+
+<!-- 文章列表 -->
+<block wx:for="{{articles}}" wx:key="item">
+ <navigator url="/pages/news-detail/news-detail?url_id={{item.url_id}}">
+ 
+  <view class="card1" wx:if="{{item.pics_url.length > 0 && item.pic_show_type == 1}}">
+    <view class="cardText">
+      <view class="basic-info">
+        <view class="title">{{item.title}}</view>
+        <view class="bi-bottom2">
+          <text class="bb2-text">{{item.author}}</text>
+          <text class="bb2-text">{{item.comment_count}}评论</text>  
+          <text class="bb2-text">{{item.relative_time}}</text>  
+        </view>
+      </view>
+    </view>
+    <image class="youtu" mode="aspectFill" src="{{item.pics_url[0]}}"/> 
+  </view>
+
+  <view class="card3" wx:if="{{item.pics_url.length > 0 && item.pic_show_type == 3}}">
+    <view class="title">{{item.title}}</view>
+    <view class="pics-box">
+      <image class="pb-iamge" src="{{item.pics_url[0]}}"></image>
+      <image class="pb-iamge" src="{{item.pics_url[1]}}"></image>
+      <image class="pb-iamge" src="{{item.pics_url[2]}}"></image>
+    </view>
+    <view class="bi-bottom1">
+      <text class="bb1-text">{{item.author}}</text>
+      <text class="bb1-text">{{item.comment_count}}评论</text>  
+      <text class="bb1-text">{{item.relative_time}}</text>
+    </view>
+  </view>
+
+  <view class="card4" wx:if="{{item.pics_url.length > 0 && item.pic_show_type == 2}}">
+    <view class="title">{{item.title}}</view>
+    <image class="datu" src="{{item.pics_url[0]}}"></image>
+    <view class="bi-bottom1">
+      <text class="bb1-text">{{item.author}}</text>
+      <text class="bb1-text">{{item.comment_count}}评论</text>  
+      <text class="bb1-text">{{item.relative_time}}</text>
+    </view>
+  </view>
+
+
+  <view class="card2" wx:if="{{item.pics_url.length == 0}}">
+    <view class="title">{{item.title}}</view>
+    <view class="bi-bottom1">
+      <text class="bb1-text">{{item.author}}</text>
+      <text class="bb1-text">{{item.comment_count}}评论</text>  
+      <text class="bb1-text">{{item.relative_time}}</text>
+    </view>
+  </view>
+</navigator>
+</block>

@@ -1,4 +1,13 @@
-<include src="../../wxSearchView/wxSearchView.wxml" />
+<!-- 搜索栏 -->
+<nb2 ph="{{ph}}" bind:dosearch="dosearch"></nb2>
+
+<!-- 占位，防止自定义导航栏遮挡内容 -->
+<view style="margin-top:{{navBarHeight}}px;"></view>
+
+<!-- 文章列表 -->
+<news articles="{{articles}}"></news>
+
+<!-- <include src="../../wxSearchView/wxSearchView.wxml" />
 <view wx:if="{{show==true}}">
 <block wx:for="{{foodList}}">
  <navigator url="/pages/detail/detail?id={{item.id}}">
@@ -9,9 +18,11 @@
           <view class="content"><text decode="{{true}}">&nbsp;&nbsp;&nbsp;{{item.content}}</text></view>
           <view class="png"><image src="/images/推荐.png"></image><image src="/images/hiscollect.png"></image></view>
         </view>
-        
 </view>
 </navigator>
 </block>
 </view>
-<view class="noData" wx:else>暂无数据</view> 
+<view class="noData" wx:else>暂无数据</view>  -->
+
+
+

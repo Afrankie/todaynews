@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/new-index/new-index",
+    "pages/search/search",
+    "pages/news-personal/news-personal",
+    "pages/news-star/news-star",
     "pages/news-comments/news-comments",
     "pages/news-detail/news-detail",
     "pages/home/index",
@@ -8,18 +11,16 @@
     "pages/logs/logs",
     "pages/webservice/search-result/search-result",
     "pages/webservice/search-form/search-form",
-    "pages/articledetail/articledetail",
     "pages/personal/personal",
     "pages/mycollect/mycollect",
     "pages/people/people",
     "pages/mymessage/mymessage",
-    "pages/allreply/allreply",
     "pages/changeinfo/changeinfo",
     "pages/authorize/authorize",
-    "pages/search/search"
+    "components/news/news"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#e16531",
+    "navigationBarBackgroundColor": "#ff0000",
     "navigationBarTitleText": "今天头条",
     "navigationBarTextStyle": "white",
     "backgroundTextStyle": "light"
@@ -36,19 +37,13 @@
         "selectedIconPath": "images/home_active.png"
       },
       {
-        "pagePath": "pages/search/search",
-        "text": "搜索",
-        "iconPath": "images/search.png",
-        "selectedIconPath": "images/search_active.png"
-      },
-      {
         "pagePath": "pages/look/look",
         "text": "发现",
         "iconPath": "images/eye.png",
         "selectedIconPath": "images/eye_active.png"
       },
       {
-        "pagePath": "pages/home/index",
+        "pagePath": "pages/news-personal/news-personal",
         "text": "我的",
         "iconPath": "images/mine.png",
         "selectedIconPath": "images/mine_active.png"

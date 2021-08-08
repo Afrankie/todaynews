@@ -1,0 +1,90 @@
+<!-- 导航栏 -->
+<view class="box">
+  <scroll-view scroll-x class="navbar" scroll-with-animation scroll-left="{{scrollLeft}}rpx">
+    <view class="nav-item" wx:for="{{tags}}" wx:key="id" bindtap="tabSelect" data-id="{{index}}">
+      <view class="nav-text {{index==tabCur?'tab-on':''}}">{{item.tag}}</view>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 点赞、收藏文章列表 -->
+<block wx:for="{{articles}}" wx:key="item" wx:if="{{tags[tabCur].tag != '评论'}}">
+  <view class="card">
+      <view class="line1">
+        <view class="author">{{item.author}}</view>
+        <view class="relative_time">{{item.relative_time}}</view>
+      </view>
+      
+      <!-- 带图片 -->
+      <navigator url="/pages/news-detail/news-detail?url_id={{item.url_id}}">
+        <view class="line2dot1" wx:if="{{item.pics.length > 0}}">
+          <view class="title">{{item.title}}</view>  
+          <image class="pic" src="{{item.pics[0]}}"></image>
+        </view>
+        <!-- 不带图片 -->
+        <view class="line2dot2" wx:if="{{item.pics.length == 0}}">
+          <view class="title">{{item.title}}</view>
+        </view>
+    </navigator>
+      <view class="line3">
+        <view class="line3-box">
+          <mp-icon icon="share" size="{{20}}" class="icon"></mp-icon>
+          <view>分享</view>
+        </view>
+        <view class="line3-box">
+          <mp-icon icon="comment" size="{{20}}" class="icon"></mp-icon>
+          <view>{{item.comment_count}}</view>
+        </view>
+        <view class="line3-box">
+          <mp-icon wx:if="{{!item.like}}" icon="like" size="{{20}}" class="icon" data-id="{{index}}" catchtap="news_like"></mp-icon>
+          <mp-icon wx:if="{{item.like}}" type="field" color="red" icon="like" size="{{20}}" class="icon" data-id="{{index}}" catchtap="news_un_like"></mp-icon>
+          <view>{{item.like_count}}</view>
+        </view>
+      </view>
+  </view>
+</block>
+
+<!-- 评论过的文章列表 -->
+<block wx:for="{{articles}}" wx:key="item" wx:if="{{tags[tabCur].tag == '评论'}}">
+  <view class="card">
+      <view class="line1dot0">
+        <image class="user_image" src="{{user_image}}"></image>
+        <view class="line1">
+          <view class="author">{{item.author}}</view>
+          <view class="relative_time">{{item.relative_time}}</view>
+        </view>
+      </view>
+      <view class="line2dot0">{{item.comment_content}}</view>
+      <!-- 带图片 -->
+      <navigator url="/pages/news-detail/news-detail?url_id={{item.url_id}}">
+        <view class="line2dot3" wx:if="{{item.pics.length > 0}}">
+          <view class="title">{{item.title}}</view>  
+          <image class="pic" src="{{item.pics[0]}}"></image>
+        </view>
+        <!-- 不带图片 -->
+        <view class="line2dot4" wx:if="{{item.pics.length == 0}}">
+          <view class="title">{{item.title}}</view>
+        </view>
+    </navigator>
+      <view class="line3">
+        <view class="line3-box">
+          <mp-icon icon="share" size="{{20}}" class="icon"></mp-icon>
+          <view>分享</view>
+        </view>
+        <view class="line3-box">
+          <mp-icon icon="comment" size="{{20}}" class="icon"></mp-icon>
+          <view>{{item.comment_count}}</view>
+        </view>
+        <view class="line3-box">
+          <mp-icon wx:if="{{!item.like}}" icon="like" size="{{20}}" class="icon" data-id="{{index}}" catchtap="news_like"></mp-icon>
+          <mp-icon wx:if="{{item.like}}" type="field" color="red" icon="like" size="{{20}}" class="icon" data-id="{{index}}" catchtap="news_un_like"></mp-icon>
+          <view>{{item.like_count}}</view>
+        </view>
+      </view>
+  </view>
+</block>
+
+<view class="zhanwei" wx:if="{{articles.length > 0}}">暂无更多数据</view>
+<view class="zhanwei" wx:if="{{articles.length == 0}}">还木有相关数据哦</view>
+
+

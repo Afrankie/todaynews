@@ -1,38 +1,14 @@
+<!-- 搜索栏 -->
+<navigation-bar ph="{{ph}}" to_url="{{to_url}}"></navigation-bar>
+
 <!-- 导航栏 -->
 <view class="box">
-  <scroll-view scroll-x class="navbar" scroll-with-animation scroll-left="{{scrollLeft}}rpx">
+  <scroll-view scroll-x class="navbar" style="margin-top:{{navBarHeight}}px;" scroll-with-animation scroll-left="{{scrollLeft}}rpx">
     <view class="nav-item" wx:for="{{tags}}" wx:key="id" bindtap="tabSelect" data-id="{{index}}">
       <view class="nav-text {{index==tabCur?'tab-on':''}}">{{item.tag}}</view>
     </view>
   </scroll-view>
 </view>
 
-
-<block wx:for="{{articles}}" wx:key="item">
- <navigator url="/pages/news-detail/news-detail?url_id={{item.url_id}}">
- 
-  <view class="card1" wx:if="{{item.pic_urls.length > 0}}">
-    <view class="cardText">
-      <view class="basic-info">
-        <view class="title">{{item.title}}</view>
-        <view class="bi-bottom2">
-          <text>{{item.author}}</text>
-          <text>{{item.comment_count}}评论</text>  
-          <text>{{item.relative_time}}</text>  
-        </view>
-      </view>
-    </view>
-    <image class="image" mode="aspectFill" src="{{item.pic_urls[0]}}"/> 
-  </view>
-
-  <view class="card2" wx:if="{{item.pic_urls.length == 0}}">
-      <view class="title">{{item.title}}</view>
-      <view class="bi-bottom1">
-        <text>{{item.author}}</text>
-        <text>{{item.comment_count}}评论</text>  
-        <text>{{item.relative_time}}</text>
-      </view>
-  </view>
-</navigator>
-</block>
-
+<!-- 文章列表 -->
+<news articles="{{articles}}"></news>

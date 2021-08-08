@@ -1,0 +1,94 @@
+/* 未登录时界面的第一大块 */
+.line1dot1{
+  height: 250rpx;
+  padding-top: 40rpx;
+  padding-bottom: 60rpx;
+}
+.denglu{
+  margin: auto;
+  letter-spacing: 2rpx;
+  padding:0;
+  background: rgba(224, 2, 46, 0.85);
+  width: 180rpx !important;
+  height:180rpx !important;
+  border-radius: 1000rpx;
+  line-height:180rpx;
+  font-weight: 1;
+  color: white;
+}
+
+/* 登录时的第一大块 */
+.line1dot2{
+  height: 160rpx;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+.rightarow{
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: 200;
+}
+.user_image{
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 450rpx;
+}
+.user_name{
+  margin: auto;
+  margin-left: 30rpx;
+  margin-right: 18rpx;
+  font-size: 35rpx;
+  font-weight: bold;
+}
+
+/* icon操作区域 */
+.icon-box{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap  
+}
+.icon-box view{
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+  width: 30%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.icon-box mp-icon{
+  margin: auto;
+}
+.icon-box text{
+  margin: auto;
+  font-size: 25rpx;
+}
+
+/* =====轮播图======= */
+.swiper-wrapper{
+  padding: 20rpx;
+  height: 180rpx;
+}
+.slide-image {
+  width: 100%;
+  height: 150rpx;
+  z-index: -1;
+}
+
+/* 占位 */
+.zhanwei{
+  background-color: rgba(128, 128, 128, 0.065);
+  height: 11rpx;
+}
+
+.changyong{
+  width: 100%;
+  font-size: 30rpx;
+  padding: 15rpx 20rpx;
+  line-height: 50rpx;
+  border-bottom: 0.1rpx solid rgba(128, 128, 128, 0.105);
+}

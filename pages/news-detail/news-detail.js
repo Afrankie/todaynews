@@ -1,8 +1,8 @@
 var cm = require("../../utils/comment.js")
 var news = require("../../utils/news.js")
 var app = getApp();
-var user_id = app.globalData.userinfo == undefined ? -1 : app.globalData.userinfo.id
-var user_name = app.globalData.userinfo == undefined ? -1 : app.globalData.userinfo.user_name
+var user_id = app.globalData.userInfo == undefined ? -1 : app.globalData.userInfo.id
+var user_name = app.globalData.userInfo == undefined ? -1 : app.globalData.userInfo.user_name
 // 页面跳转携带
 var url_id = -1
 
@@ -177,9 +177,7 @@ Page({
       "url_id":url_id,
       "content":ta_content
     }
-    cm.addComments(param, function(data){
-      console.log("添加评论的回调:")
-      console.log(data)
+    cm.addComments(param, function(data){      
       comments.push(data)
       that.setData({
         comment_count:comment_count + 1,

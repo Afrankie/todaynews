@@ -1,0 +1,178 @@
+/* 收藏、点赞card */
+.card{
+  padding: 25rpx;
+  border-bottom: 6px solid rgba(128, 128, 128, 0.105);
+}
+.line1{
+  display: flex;
+  flex-direction: column;
+}
+.author{
+  font-weight: 400;
+  font-size: 28rpx;
+}
+.relative_time{
+  margin-top: 5rpx;
+  font-size: 20rpx;
+  color: grey;
+}
+/* 主体有图片 */
+.line2dot1{
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.line2dot1 view{
+  width: 65%;
+  padding-right: 10rpx;
+  margin: auto;
+}
+.line2dot1 image{
+  margin: auto;
+  width: 33%;
+  height: 170rpx;
+}
+/* 主体没图片 */
+.line2dot2{
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.title{
+  letter-spacing: 1rpx;
+
+  font-size: 28rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.line3{
+  padding: 5rpx;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: auto;
+}
+.line3-box{
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+.line3-box mp-icon{
+  margin: auto;
+  margin-right: 8rpx;
+}
+.line3-box view{
+  padding-top: 10rpx;
+  margin: auto;
+  font-size: 25rpx;
+}
+
+/* 评论card */
+/* 第一大块 */
+.line1dot0{
+  display: flex;
+  flex-direction: row;
+}
+.user_image{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 15rpx;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 400rpx;
+}
+
+/* 用户评论的内容 */
+.line2dot0{
+  letter-spacing: 1rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+
+  font-size: 28rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 主体有图片 */
+.line2dot3{
+  background-color: rgba(128,128,128,0.1);
+  padding: 18rpx;
+
+  display: flex;
+  flex-direction: row;
+}
+.line2dot3 view{
+  width: 80%;
+  margin: auto;
+}
+.line2dot3 image{
+  margin: auto;
+  width: 14%;
+  height: 65rpx;
+}
+
+/* 主体没图片 */
+.line2dot4{
+  background-color: rgba(128,128,128,0.1);
+  padding: 18rpx;
+}
+
+
+/* =====导航栏======== */
+.box{
+  height: 50rpx;
+}
+.navbar {
+  width: 100%;
+  /* 文本不换行 */
+  white-space: nowrap;
+  display: flex;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #eee;
+  background: #fff;
+  align-items: center;
+  /* 固定在顶部 */
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  z-index: 999;
+}
+.nav-item {
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+  height: 100%;
+  display: inline-block;
+  /* 普通文字大小 */
+  font-size: 32rpx;
+}
+.nav-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1rpx;
+  box-sizing: border-box;
+}
+.tab-on {
+  font-weight: 460;
+  border-bottom: 4rpx solid red !important;
+}
+
+
+/* 占位 */
+.zhanwei{
+  width: 100%;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 20rpx;
+}

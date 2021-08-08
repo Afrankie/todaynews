@@ -1,0 +1,57 @@
+<!-- 未登录时的第一大块 -->
+<view class="line1dot1" wx:if="{{isLogin == false}}">
+  <button class="denglu" catchtap="login">登录</button>
+</view>
+
+<!-- 登录时的第一大块 -->
+<view class="line1dot2" wx:if="{{isLogin == true}}">
+  <image class="user_image" src="{{user_image}}"></image>
+  <view class="user_name">{{user_name}}</view>
+  <view class="rightarow">></view>
+</view>
+
+<!-- 灰色占位条 -->
+<view class="zhanwei"/>
+
+<!-- 轮播图 -->
+<swiper indicator-dots="true" indicator-color="#DCDCDC" indicator-active-color="#F8F8FF" circular="true" autoplay="true" interval="2500" duration="500" class='swiper-wrapper'>
+  <view wx:for="{{guanggao_pics}}">
+    <swiper-item>
+     <image src="{{item.url}}" class="slide-image"/>
+    </swiper-item>
+  </view>
+</swiper>
+
+<!-- 灰色占位条 -->
+<view class="zhanwei"/>
+
+<view class="changyong">常用</view>
+
+<!-- icon操作集合 -->
+<view class="icon-box">
+  <view>
+    <mp-icon icon="bellring-on" size="{{24}}" class="icon"></mp-icon>
+    <text>消息通知</text>
+  </view>
+  <view catchtap="getStar">
+    <mp-icon icon="star" size="{{24}}" class="icon"></mp-icon>
+    <text>收藏</text>
+  </view>
+  <view>
+    <mp-icon icon="setting" size="{{24}}" class="icon"></mp-icon>
+    <text>系统设置</text>
+  </view>
+  <view>
+    <mp-icon icon="add-friends" size="{{24}}" class="icon"></mp-icon>
+    <text>关注</text>
+  </view>
+  <view catchtap="getHistory">
+    <mp-icon icon="time" size="{{24}}" class="icon"></mp-icon>
+    <text>历史</text>
+  </view>
+  <view>
+    <mp-icon icon="pencil" size="{{25}}" class="icon"></mp-icon>
+    <text>用户反馈</text>
+  </view>
+</view>
+

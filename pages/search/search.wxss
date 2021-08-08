@@ -1,4 +1,9 @@
-@import "../../wxSearchView/wxSearchView.wxss";
+
+
+/* @import "../../wxSearchView/wxSearchView.wxss";
+.nb{
+  width: 100%;
+}
 .card {
     border: 2px solid #ffffff;
     border-radius: 10px;
@@ -54,4 +59,4 @@
   text-align: center;
   margin: 30rpx;
   color: #c2bebe
-}
+} */
