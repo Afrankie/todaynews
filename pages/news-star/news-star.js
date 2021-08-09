@@ -56,6 +56,8 @@ Page({
       news.getStarNews(param, func)
     } else if (tags[tabCur].tag == '评论'){
       news.getCommentNews(param, func)
+    } else if (tags[tabCur].tag == '历史'){
+      news.getHistoryNews(param, func)
     }
   },
 

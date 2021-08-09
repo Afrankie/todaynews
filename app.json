@@ -12,9 +12,6 @@
     "pages/logs/logs",
     "pages/webservice/search-result/search-result",
     "pages/webservice/search-form/search-form",
-    "pages/personal/personal",
-    "pages/mycollect/mycollect",
-    "pages/people/people",
     "pages/mymessage/mymessage",
     "pages/changeinfo/changeinfo",
     "pages/authorize/authorize"

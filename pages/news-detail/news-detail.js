@@ -1,5 +1,6 @@
 var cm = require("../../utils/comment.js")
 var news = require("../../utils/news.js");
+var cache = require("../../utils/cache.js");
 const user = require("../../utils/user.js");
 const util = require("../../utils/util.js");
 const app = getApp();
@@ -39,7 +40,8 @@ Page({
     like_count:"",
     like:"",
     star:"",
-    comments:[]
+    comments:[],
+
   },
 
   // 评论点赞、取消评论点赞
@@ -171,7 +173,6 @@ Page({
     var ta_content = that.data.ta_content
 
     // 需动态更新
-    
     var comment_count = that.data.comment_count
     var comments = that.data.comments
     var param = {
@@ -239,6 +240,15 @@ Page({
           comments:data.comments
         })
       })
+
+      //浏览记录缓存
+      var cache_key = news.cache_key
+      var cache_size = news.cache_size
+      
+      cache.initCache(cache_key, cache_size)
+      if (typeof url_id != 'undefined' && url_id != -1){
+        cache.push(cache_key, url_id)
+      }
   },
 
   /**

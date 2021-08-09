@@ -7,22 +7,14 @@
 <!-- 文章列表 -->
 <news articles="{{articles}}"></news>
 
-<!-- <include src="../../wxSearchView/wxSearchView.wxml" />
-<view wx:if="{{show==true}}">
-<block wx:for="{{foodList}}">
- <navigator url="/pages/detail/detail?id={{item.id}}">
-<view class="card" >
-        <image class="image" mode="aspectFill" src="{{item.pic}}"/>
-        <view class="cardText">
-          <view class="title">{{item.name}}</view>
-          <view class="content"><text decode="{{true}}">&nbsp;&nbsp;&nbsp;{{item.content}}</text></view>
-          <view class="png"><image src="/images/推荐.png"></image><image src="/images/hiscollect.png"></image></view>
-        </view>
+
+<!-- 搜索历史 -->
+<view class="history-box" wx:if="{{history_show}}">
+  <view wx:if="{{cache_keywords.length > 0}}" class="sousuolishi">搜索历史</view>
+  <view class="keyword-box">
+    <view wx:for="{{cache_keywords}}" wx:key="item" data-text="{{item}}" class="keyword" catchtap="historySearch">{{item}}</view>
+  </view>
 </view>
-</navigator>
-</block>
-</view>
-<view class="noData" wx:else>暂无数据</view>  -->
 
 
 

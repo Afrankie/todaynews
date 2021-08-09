@@ -1,6 +1,12 @@
+const cache = require("./cache.js")
 const { gen_url } = require("./req.js");
 var req = require("./req.js")
-var app = getApp();
+const app = getApp();
+
+//浏览记录的缓存
+const cache_key = "view"
+const cache_size = 100
+
 
 function getNewById(param,callback){
   var surl = app.globalData.surl + "/news/details"
@@ -58,6 +64,14 @@ function search(param, callback){
   req.do_get(surl, callback)
 }
 
+function getHistoryNews(param, callback){
+  var user_id = app.globalData.userInfo.id
+  var surl = app.globalData.surl + "/news/list"
+  var url_ids = cache.getCache(cache_key)
+  var param = {'user_id':user_id, 'url_ids':url_ids}
+  req.do_post(surl, param, callback)
+}
+
 module.exports = {
   getNewById: getNewById,
   getNews: getNews,
@@ -68,5 +82,8 @@ module.exports = {
   getStarNews:getStarNews,
   getLikeNews:getLikeNews,
   getCommentNews:getCommentNews,
-  search:search
+  search:search,
+  getHistoryNews:getHistoryNews,
+  cache_key:cache_key,
+  cache_size:cache_size
 };

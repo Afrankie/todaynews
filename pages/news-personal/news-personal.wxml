@@ -51,7 +51,7 @@
     <text>历史</text>
   </view>
   <view>
-    <mp-icon icon="pencil" size="{{25}}" class="icon"></mp-icon>
+    <mp-icon icon="pencil" size="{{24}}" class="icon"></mp-icon>
     <text>用户反馈</text>
   </view>
 </view>

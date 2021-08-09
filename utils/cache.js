@@ -21,17 +21,17 @@ function initCache(key, size){
 function getCache(key){
   return wx.getStorageSync(key);
 }
-function push(key, value){
+function push(key, _value){
   var value = wx.getStorageSync(key);
   var max_size = wx.getStorageSync(key+"Size")
 
   if (value) {
     //检查是否重复
-    if (value.indexOf(inputValue) < 0) {
+    if (value.indexOf(_value) < 0) {
       if (value.length == max_size){
         value.pop()
       }
-      value.unshift(inputValue);
+      value.unshift(_value);
     }
 
     wx.setStorage({

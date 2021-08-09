@@ -1,62 +1,22 @@
-
-
-/* @import "../../wxSearchView/wxSearchView.wxss";
-.nb{
-  width: 100%;
+/* 搜索历史 */
+.history-box{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 25rpx;
 }
-.card {
-    border: 2px solid #ffffff;
-    border-radius: 10px;
-    background-color: #ffffff;
-    box-shadow: 5px 2px 2px #e1663198;
-    margin: 8px;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.sousuolishi{
+  font-size: 26rpx;
+  color: rgba(128, 128, 128, 0.505);
 }
 
-.image {
-    width: 30%;
-    height: 200rpx;
-    border-radius: 10px;
-    padding-top: 5rpx;
-    background-color: #eeeeee;
+.keyword-box{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 28rpx;
 }
-.cardText{
-  width: 65%;
-  height: 200rpx;
-  margin-left: 3%;
-}
-.title{
-  margin: 5rpx;
-  color:  #615e5e;
-}
-.content{
+.keyword{
+  padding-top: 10rpx;
   padding-bottom: 10rpx;
+  width: 49%;
 }
-.content text{
-  color:  #615e5e;
-  font-size: 0.6rem;
-  display: -webkit-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: break-all;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-}
-.png{
-  position:absolute;
-  right:0px;
-  bottom:0px;
-}
-.png image{
-  width: 50rpx;
-  height: 50rpx;
-  float: right;
-}
-.noData{
-  text-align: center;
-  margin: 30rpx;
-  color: #c2bebe
-} */
